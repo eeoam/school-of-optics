@@ -1,0 +1,29 @@
+cabal-version: 1.12
+
+-- This file has been generated from package.yaml by hpack version 0.37.0.
+--
+-- see: https://github.com/sol/hpack
+
+name:           school-of-optics
+version:        0.0.0
+synopsis:       TODO
+description:    TODO
+build-type:     Simple
+
+library
+  exposed-modules:
+      Lens
+  other-modules:
+      Paths_school_of_optics
+  hs-source-dirs:
+      src
+  default-extensions:
+      StrictData
+      DerivingStrategies
+      TemplateHaskell
+  ghc-options: -pgmL markdown-unlit
+  build-depends:
+      base
+    , containers
+    , lens
+  default-language: GHC2021

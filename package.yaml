@@ -1,0 +1,21 @@
+name: school-of-optics
+version: 0.0.0
+synopsis: TODO
+description: TODO
+
+language: GHC2021
+
+default-extensions:
+- StrictData
+- DerivingStrategies
+- TemplateHaskell
+
+dependencies:
+- base
+- lens
+- containers
+
+ghc-options: -pgmL markdown-unlit
+
+library:
+  source-dirs: src

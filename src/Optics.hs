@@ -30,12 +30,19 @@ pair = (True, 0)
 {- == (True, (False, 0)) -}
 
 
-{-----Folds-----}
+{-----Folds-----} 
 
-nats = Set.fromList [0, 1, 2]
-
--- $> nats ^.. folded
+-- $> Set.fromList [0, 1, 2] ^.. folded
 -- [0, 1, 2]
+
+-- $> (True, False) ^.. both
+-- [True, False]
+
+-- $> Left True ^.. both
+-- [ True ]
+
+-- $> Right False ^.. both
+-- [ False ]
 
 {-
 

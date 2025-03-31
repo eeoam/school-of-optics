@@ -63,6 +63,10 @@ pair = (True, 0)
 -- $> encodeUtf8 (Text.pack "hello") ^.. each
 -- [104, 101, 108, 108, 111]
 
+data A = A Int (Int, Int)
+-- $> A 0 (1,2) ^.. folding (\(A x (y,z)) -> x : [y, z])
+-- [0, 1, 2]
+
 
 {-
 

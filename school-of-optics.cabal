@@ -12,7 +12,7 @@ build-type:     Simple
 
 library
   exposed-modules:
-      Lens
+      Optics
   other-modules:
       Paths_school_of_optics
   hs-source-dirs:
@@ -24,6 +24,8 @@ library
   ghc-options: -pgmL markdown-unlit
   build-depends:
       base
+    , bytestring
     , containers
     , lens
+    , text
   default-language: GHC2021

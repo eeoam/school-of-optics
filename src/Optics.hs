@@ -1,7 +1,14 @@
+{-# LANGUAGE OverloadedStrings #-}
+
 module Optics where
 
 import {- lens       -} Control.Lens
 import {- containers -} Data.Set qualified as Set
+import {- text       -} Data.Text ( Text )
+import {- text       -} Data.Text qualified as Text
+import {- bytestring -} Data.ByteString (ByteString)
+import {- bytestring -} Data.ByteString qualified as Bytes
+import {- text       -} Data.Text.Encoding ( encodeUtf8 )
 
 {-----Lenses-----}
 
@@ -43,6 +50,19 @@ pair = (True, 0)
 
 -- $> Right False ^.. both
 -- [ False ]
+
+-- $> (1,2,3,4,5) ^.. each
+-- [1,2,3,4,5]
+
+-- $> [1,2,3,4,5] ^.. each
+-- [1,2,3,4,5] 
+
+-- $> Text.pack "hello"  ^.. each
+-- ['h', 'e', 'l', 'l', 'o']
+
+-- $> encodeUtf8 (Text.pack "hello") ^.. each
+-- [104, 101, 108, 108, 111]
+
 
 {-
 

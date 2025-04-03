@@ -67,13 +67,25 @@ data A = A Int (Int, Int)
 -- $> A 0 (1,2) ^.. folding (\(A x (y,z)) -> x : [y, z])
 -- [0, 1, 2]
 
+data Name = Name { firstName, surname :: Text }
+name = Name (Text.pack "Carl") (Text.pack "Menger")
 
+
+-- $> name ^.. to firstName
+-- [ "Carl" ]
+
+-- $> name ^. to firstName
+-- "Carl"
+
+-- elemOf p.94
 {-
+
+ghciwatch --command "stack repl" --watch src --watch package.yaml --enable-eval
 
 ^.  Get focused element (exactly 1 focus)
         _1 (first element of tuple)
 
-^.. Get iterator for all focused elements (at least 0 foci)
+^.. Get iterator for all focused elements (at least 0 foci) (type Iterator a = [ a ])
         folded (all the elements of a Foldable container)
         both (both elements of a Pair a a / Either a a)
         each (all elements of a tuple, list, Text, ByteString)

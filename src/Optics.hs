@@ -77,7 +77,11 @@ name = Name (Text.pack "Carl") (Text.pack "Menger")
 -- $> name ^. to firstName
 -- "Carl"
 
--- elemOf p.94
+-- $> [1, 2, 3, 4] & elemOf folded 3
+-- True
+
+-- $> ('a', 'b') & elemOf both 'a'
+-- True
 {-
 
 ghciwatch --command "stack repl" --watch src --watch package.yaml --enable-eval
@@ -89,6 +93,10 @@ ghciwatch --command "stack repl" --watch src --watch package.yaml --enable-eval
         folded (all the elements of a Foldable container)
         both (both elements of a Pair a a / Either a a)
         each (all elements of a tuple, list, Text, ByteString)
+
+        folding
+        to 
+        elemOf
 
 -}
 

@@ -91,6 +91,15 @@ name = Name (Text.pack "Carl") (Text.pack "Menger")
 
 -- $> (1, 4, 3, 2) & findOf each even
 -- Just 4
+
+-- $> ('a', 'b', 'c', 'd') & has each
+-- True
+
+-- $> [] & hasn't folded
+-- True
+
+-- $> ('a', 'b', 'c', 'd') & lengthOf each
+-- 4
 {-
 
 ghciwatch --command "stack repl" --watch src --watch package.yaml --enable-eval

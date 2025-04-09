@@ -85,6 +85,12 @@ name = Name (Text.pack "Carl") (Text.pack "Menger")
 
 -- $> (1, 2, 3, 4) & anyOf each even
 -- True
+
+-- $> (1, 2, 3, 4) & allOf each odd
+-- False
+
+-- $> (1, 4, 3, 2) & findOf each even
+-- Just 4
 {-
 
 ghciwatch --command "stack repl" --watch src --watch package.yaml --enable-eval

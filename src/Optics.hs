@@ -100,6 +100,18 @@ name = Name (Text.pack "Carl") (Text.pack "Menger")
 
 -- $> ('a', 'b', 'c', 'd') & lengthOf each
 -- 4
+
+-- $> ('a', 'b') & firstOf each
+-- Just 'a'
+
+-- $> ('a', 'b') & preview each
+-- Just 'a'
+
+-- $> ('a', 'b') ^? each
+-- Just 'a'
+
+-- $> ('a', 'b') & lastOf each
+-- Just 'b'
 {-
 
 ghciwatch --command "stack repl" --watch src --watch package.yaml --enable-eval

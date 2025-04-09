@@ -82,6 +82,9 @@ name = Name (Text.pack "Carl") (Text.pack "Menger")
 
 -- $> ('a', 'b') & elemOf both 'a'
 -- True
+
+-- $> (1, 2, 3, 4) & anyOf each even
+-- True
 {-
 
 ghciwatch --command "stack repl" --watch src --watch package.yaml --enable-eval

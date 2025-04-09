@@ -112,6 +112,12 @@ name = Name (Text.pack "Carl") (Text.pack "Menger")
 
 -- $> ('a', 'b') & lastOf each
 -- Just 'b'
+
+-- $> (1, 2, 3, 4) & minimumOf each
+-- Just 1
+
+-- $> (1, 2, 3, 4) & maximumOf each
+-- Just 4
 {-
 
 ghciwatch --command "stack repl" --watch src --watch package.yaml --enable-eval

@@ -11,6 +11,7 @@ import {- bytestring -} Data.ByteString qualified as Bytes
 import {- text       -} Data.Text.Encoding ( encodeUtf8 )
 
 import {- base       -} Data.Ord ( comparing )
+import {- base       -} Data.Monoid ( Sum(..) )
 
 {-----Lenses-----}
 
@@ -131,6 +132,14 @@ name = Name (Text.pack "Carl") (Text.pack "Menger")
 -- 1
 -- 2
 -- 3
+
+average (Sum total, Sum count) = fromIntegral total / fromIntegral count
+
+-- $> average $ (1, 2, 3) & foldOf (each . to (\x -> (Sum x, Sum 1)))
+-- 2
+
+-- $> average $ (1, 2, 3) & foldMapOf each (\x -> (Sum x, Sum 1))
+-- 2
 
 {-
 

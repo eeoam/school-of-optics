@@ -126,6 +126,12 @@ name = Name (Text.pack "Carl") (Text.pack "Menger")
 
 -- $> ('a', 'b', 'c') & minimumByOf each (comparing id)
 -- Just 'a'
+
+-- $> (1, 2, 3) & traverseOf_ each print
+-- 1
+-- 2
+-- 3
+
 {-
 
 ghciwatch --command "stack repl" --watch src --watch package.yaml --enable-eval

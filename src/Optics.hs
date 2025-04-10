@@ -10,6 +10,8 @@ import {- bytestring -} Data.ByteString (ByteString)
 import {- bytestring -} Data.ByteString qualified as Bytes
 import {- text       -} Data.Text.Encoding ( encodeUtf8 )
 
+import {- base       -} Data.Ord ( comparing )
+
 {-----Lenses-----}
 
 -- pair : { _1 : Bool, _2 : Int } = Bool x Int
@@ -118,6 +120,12 @@ name = Name (Text.pack "Carl") (Text.pack "Menger")
 
 -- $> (1, 2, 3, 4) & maximumOf each
 -- Just 4
+
+-- $> ('a', 'b', 'c') & maximumByOf each (comparing id)
+-- Just 'c'
+
+-- $> ('a', 'b', 'c') & minimumByOf each (comparing id)
+-- Just 'a'
 {-
 
 ghciwatch --command "stack repl" --watch src --watch package.yaml --enable-eval

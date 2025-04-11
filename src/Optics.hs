@@ -4,6 +4,7 @@ module Optics where
 
 import {- lens       -} Control.Lens
 import {- containers -} Data.Set qualified as Set
+import {- containers -} Data.Map qualified as Map
 import {- text       -} Data.Text ( Text )
 import {- text       -} Data.Text qualified as Text
 import {- bytestring -} Data.ByteString (ByteString)
@@ -140,6 +141,9 @@ average (Sum total, Sum count) = fromIntegral total / fromIntegral count
 
 -- $> average $ (1, 2, 3) & foldMapOf each (\x -> (Sum x, Sum 1))
 -- 2
+
+-- $> ('a', 'b', 'b', 'c', 'c', 'c') & foldMapByOf each (Map.unionWith (+)) Map.empty (\c -> Map.singleton c 1)
+-- {'a'::1 'b'::2 'c'::3}
 
 {-
 

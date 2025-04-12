@@ -145,6 +145,19 @@ average (Sum total, Sum count) = fromIntegral total / fromIntegral count
 -- $> ('a', 'b', 'b', 'c', 'c', 'c') & foldMapByOf each (Map.unionWith (+)) Map.empty (\c -> Map.singleton c 1)
 -- {'a'::1 'b'::2 'c'::3}
 
+-- $> ("Agda", "Haskell") ^.. each . taking 2 folded
+-- "AgHa"
+
+-- $> ("Agda", "Haskell") ^.. taking 2 (each . folded)
+-- "Ag"
+
+-- $> ("Agda", "Haskell") ^.. each . dropping 2 folded
+-- "daskell"
+
+-- $> ("Agda", "Haskell") ^.. dropping 2 (each . folded)
+-- "daHaskell"
+
+
 {-
 
 ghciwatch --command "stack repl" --watch src --watch package.yaml --enable-eval

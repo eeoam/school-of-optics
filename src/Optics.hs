@@ -157,7 +157,12 @@ average (Sum total, Sum count) = fromIntegral total / fromIntegral count
 -- $> ("Agda", "Haskell") ^.. dropping 2 (each . folded)
 -- "daHaskell"
 
+-- 2025-04-14
+-- $> ("Agda", "Haskell") ^.. each . backwards folded
+-- = "adgAlleksaH"
 
+-- $> ("Agda", "Haskell") ^.. backwards (each . folded)
+-- = "lleksaHadgA"
 {-
 
 ghciwatch --command "stack repl" --watch src --watch package.yaml --enable-eval

@@ -169,6 +169,18 @@ average (Sum total, Sum count) = fromIntegral total / fromIntegral count
 
 -- $> [1..20] ^.. droppingWhile (<10) folded
 -- [10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20]
+
+-- $> (1,2,3,4) ^.. each . filtered even
+-- [2,4]
+
+-- $> 'a' ^? only 'a'
+-- Just ()
+
+-- $> 'a' ^? only 'A'
+-- Nothing
+
+-- $> (1,2,3,2) ^.. each . filteredBy (only 2)
+-- [2,2]
 {-
 
 ghciwatch --command "stack repl" --watch src --watch package.yaml --enable-eval

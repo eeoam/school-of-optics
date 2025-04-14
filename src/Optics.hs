@@ -163,6 +163,12 @@ average (Sum total, Sum count) = fromIntegral total / fromIntegral count
 
 -- $> ("Agda", "Haskell") ^.. backwards (each . folded)
 -- = "lleksaHadgA"
+
+-- $> [1..20] ^.. takingWhile (<10) folded
+-- [1,2,3,4,5,6,7,8,9]
+
+-- $> [1..20] ^.. droppingWhile (<10) folded
+-- [10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20]
 {-
 
 ghciwatch --command "stack repl" --watch src --watch package.yaml --enable-eval

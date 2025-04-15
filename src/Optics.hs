@@ -186,6 +186,10 @@ average (Sum total, Sum count) = fromIntegral total / fromIntegral count
 -- $> (False, False) & both .~ True
 -- (True, True)
 
+-- $> import Data.Char (toUpper)
+-- $> Text.pack "Bool" & each %~ toUpper
+-- "BOOL"
+
 {-
 
 ghciwatch --command "stack repl" --watch src --watch package.yaml --enable-eval

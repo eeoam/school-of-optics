@@ -190,6 +190,9 @@ average (Sum total, Sum count) = fromIntegral total / fromIntegral count
 -- $> Text.pack "Bool" & each %~ toUpper
 -- "BOOL"
 
+-- $> ["AB", "ABC"] & each . filtered ((>2) . length) %~ reverse
+-- ["AB", "CBA"]
+
 {-
 
 ghciwatch --command "stack repl" --watch src --watch package.yaml --enable-eval

@@ -157,7 +157,7 @@ average (Sum total, Sum count) = fromIntegral total / fromIntegral count
 -- $> ("Agda", "Haskell") ^.. dropping 2 (each . folded)
 -- "daHaskell"
 
--- 2025-04-14
+
 -- $> ("Agda", "Haskell") ^.. each . backwards folded
 -- = "adgAlleksaH"
 
@@ -181,6 +181,11 @@ average (Sum total, Sum count) = fromIntegral total / fromIntegral count
 
 -- $> (1,2,3,2) ^.. each . filteredBy (only 2)
 -- [2,2]
+
+--148
+-- $> (False, False) & both .~ True
+-- (True, True)
+
 {-
 
 ghciwatch --command "stack repl" --watch src --watch package.yaml --enable-eval

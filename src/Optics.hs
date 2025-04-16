@@ -195,6 +195,17 @@ average (Sum total, Sum count) = fromIntegral total / fromIntegral count
 
 -- $> [1,2,3] & traversed *~ 2
 
+--worded/lined
+
+-- $> "ludwig von mises" & worded %~ \(x:xs) -> toUpper x : xs
+-- "Ludwig Von Mises"
+
+-- $> "agda\nhaskell" & lined %~ \(x:xs) -> toUpper x : xs
+-- "Agda\nHaskell"
+
+--beside
+--element/elementOf
+
 {-
 
 ghciwatch --command "stack repl" --watch src --watch package.yaml --enable-eval

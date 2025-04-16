@@ -211,7 +211,11 @@ rtuple = Right (3,4,5)
 -- $> rtuple & beside both each %~ negate
 -- Right (-3, -4)
 
---element/elementOf
+-- $> [0,1,2,3] & element 3 *~ 2
+-- [0,1,2,6]
+
+-- $> ((0,1),(2,3)) & elementOf (each . each) 3 *~ 2
+-- ((0,1),(2,6))
 
 {-
 

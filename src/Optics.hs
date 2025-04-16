@@ -193,6 +193,8 @@ average (Sum total, Sum count) = fromIntegral total / fromIntegral count
 -- $> ["AB", "ABC"] & each . filtered ((>2) . length) %~ reverse
 -- ["AB", "CBA"]
 
+-- $> [1,2,3] & traversed *~ 2
+
 {-
 
 ghciwatch --command "stack repl" --watch src --watch package.yaml --enable-eval

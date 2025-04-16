@@ -195,15 +195,22 @@ average (Sum total, Sum count) = fromIntegral total / fromIntegral count
 
 -- $> [1,2,3] & traversed *~ 2
 
---worded/lined
-
 -- $> "ludwig von mises" & worded %~ \(x:xs) -> toUpper x : xs
 -- "Ludwig Von Mises"
 
 -- $> "agda\nhaskell" & lined %~ \(x:xs) -> toUpper x : xs
 -- "Agda\nHaskell"
 
---beside
+ltuple, rtuple :: Either (Int,Int) (Int,Int,Int)
+ltuple = Left (1,2)
+rtuple = Right (3,4,5)  
+
+-- $> ltuple & beside both each %~ negate
+-- Left (-1, -2)
+
+-- $> rtuple & beside both each %~ negate
+-- Right (-3, -4)
+
 --element/elementOf
 
 {-

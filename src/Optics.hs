@@ -217,6 +217,14 @@ rtuple = Right (3,4,5)
 -- $> ((0,1),(2,3)) & elementOf (each . each) 3 *~ 2
 -- ((0,1),(2,6))
 
+--158
+
+-- $> import Text.Read (readMaybe)
+-- $> ("0", "1") & traverseOf each readMaybe :: Maybe (Int, Int)
+-- Just (0,1)
+
+-- infix traverseOf %%~
+-- $> ("0", "1" ) & each %%~ readMaybe :: Maybe (Int, Int)
 {-
 
 ghciwatch --command "stack repl" --watch src --watch package.yaml --enable-eval

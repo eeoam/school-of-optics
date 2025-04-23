@@ -225,6 +225,11 @@ rtuple = Right (3,4,5)
 
 -- infix traverseOf %%~
 -- $> ("0", "1" ) & each %%~ readMaybe :: Maybe (Int, Int)
+
+partsOfeg = [('a', 1), ('b', 2), ('c', 3), ('d', 2), ('e',2)] 
+          & partsOf (traversed . _2)
+          %~ \xs -> (/ sum xs) <$> xs
+-- $> partsOfeg
 {-
 
 ghciwatch --command "stack repl" --watch src --watch package.yaml --enable-eval

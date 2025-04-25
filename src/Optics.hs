@@ -234,6 +234,26 @@ partsOfeg = [('a', 1), ('b', 2), ('c', 3), ('d', 2), ('e',2)]
 
 -- $> Text.pack "fuse" & ix 0 .~ 'm'
 -- muse
+
+tt = Map.fromList [("ramified", "Russell")]
+-- $> tt ^. at "ramified"
+-- Just "Russell"
+
+-- $> tt  ^. at "spec"
+-- Nothing
+
+-- $> tt & at "simple" .~ Just "Chwistek, Ramsey, Church"
+-- Map.fromList [("ramified", "Russell"), ("simple", "Chwistek, Ramsey, Church")]
+
+-- $> tt & at "simple" ?~ "Chwistek, Ramsey, Church"
+-- Map.fromList [("ramified", "Russell"), ("simple", "Chwistek, Ramsey, Church")]
+
+-- $> tt & at "ramified" .~ Nothing
+-- Map.fromList []
+
+-- $> tt & sans "ramified"
+-- Map.fromList []
+
 {-
 
 ghciwatch --command "stack repl" --watch src --watch package.yaml --enable-eval
